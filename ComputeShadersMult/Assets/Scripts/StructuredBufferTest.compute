@@ -1,0 +1,9 @@
+﻿#pragma kernel CSMain
+
+RWStructuredBuffer<int> bufColors;
+ 
+[numthreads(4,1,1)]
+void CSMain (uint3 id : SV_DispatchThreadID)
+{
+    bufColors[id.x] = id.x;
+}

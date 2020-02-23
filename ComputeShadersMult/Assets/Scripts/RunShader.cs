@@ -11,6 +11,10 @@ public class RunShader : MonoBehaviour
     {
         computeShader(256, 256, 24);
     }
+    
+    void Update() {
+        computeShader(256, 256, 24);
+    }
 
     void computeShader(int width, int height, int depth){
         
@@ -30,6 +34,6 @@ public class RunShader : MonoBehaviour
         // number of thread groups to spawn
         shader.Dispatch(kernelHandle, width/8, height/8, 1);
 
-        this.GetComponent<Camera>().targetTexture = tex;
+        //this.GetComponent<MeshRenderer>().material = tex;
     }
 }
